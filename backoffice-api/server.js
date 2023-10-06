@@ -4,6 +4,7 @@ const config = require("./config");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const azure = require('azure-sb');
+require("dotenv").config()
 const { BlobServiceClient } = require('@azure/storage-blob');
 
 const swaggerJsdoc = require("swagger-jsdoc");
