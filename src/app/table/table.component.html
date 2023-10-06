@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+        <th>Care Pathway ID</th>
+        <th>Device ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Anesthesia Date</th>
+        <th>Surgery Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows" (click)="onRowClicked(row)" [routerLink]="['/patient', row.id]">
+        <td>{{ row.carePathwayId }}</td>
+        <td>{{ row.deviceId ?? "Aucun" }}</td>
+        <td>{{ row.firstName }}</td>
+        <td>{{ row.lastName }}</td>
+        <td>{{ row.anesthesiaDate }}</td>
+        <td>{{ row.surgeryDate }}</td>
+      </tr>
+    </tbody>
+  </table>

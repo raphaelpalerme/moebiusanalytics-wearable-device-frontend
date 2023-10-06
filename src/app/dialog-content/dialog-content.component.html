@@ -1,0 +1,13 @@
+
+    <h2 mat-dialog-title>Associer une montre</h2>
+    <mat-dialog-content>
+      <mat-form-field>
+        <input matInput placeholder="Device ID" [(ngModel)]="deviceId">
+      </mat-form-field>
+    </mat-dialog-content>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    <mat-dialog-actions>
+      <button mat-button (click)="annuler()">Annuler</button>
+      <button mat-button [disabled]="!deviceId" (click)="valider()">Valider</button>
+    </mat-dialog-actions>
+

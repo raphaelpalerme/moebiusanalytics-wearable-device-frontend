@@ -1,0 +1,10 @@
+div.cdk-overlay-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.error-message {
+    color: red;
+    margin-left: 20px;
+}

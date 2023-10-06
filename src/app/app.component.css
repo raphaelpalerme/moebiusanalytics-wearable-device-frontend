@@ -1,0 +1,40 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+}
+
+.content {
+    display: flex;
+    margin: 82px;  /* Ajusté pour décaler du côté gauche */
+    flex-direction: column;
+}
+
+.back-icon {
+    cursor: pointer; 
+    color: #fff; /* ou toute autre couleur de votre choix */
+    font-size: 20px; /* ajustez la taille de l'icône */
+    padding: 10px; /* ajoute un peu d'espace autour pour faciliter le clic */
+    background: transparent; /* garantit qu'il n'y a pas de fond */
+    border: none; /* s'assure qu'il n'y a pas de bordure */
+}
+  
+.page-name {
+    margin-left: 20px; /* Ajustez cette valeur selon vos besoins */
+}

@@ -1,0 +1,56 @@
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100% - 60px);
+    width: 200px;
+    background-color: #333;
+    padding: 20px 0;
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a {
+    color: #555;  /* Ou toute autre couleur qui offre un bon contraste avec l'arrière-plan non sélectionné */
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+    display: block;
+    padding: 5px 15px;
+    cursor: pointer; 
+}
+
+.selected-menu {
+    background-color: #555;
+    display: block;
+    padding: 5px 15px;
+    color: #333;  /* Ajoutez une couleur de texte foncée pour le menu sélectionné */
+}
+
+.top-tabs a {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-top: 2px solid transparent;
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: large;
+}
+
+.top-tabs a.active {
+    border-bottom: 2px solid #1976d2;
+}

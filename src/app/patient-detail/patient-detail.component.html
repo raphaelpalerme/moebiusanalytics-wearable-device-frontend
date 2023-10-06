@@ -1,0 +1,41 @@
+
+<div class="main-container">
+    <div class="sidebar">
+        <ul>
+            <li><a [class.selected-menu]="selectedMenu === 'patient'" (click)="selectedMenu = 'patient'">Patient</a></li>
+            <li><a [class.selected-menu]="selectedMenu === 'vfc'" (click)="selectedMenu = 'vfc'">VFC</a></li>
+        </ul>
+    </div>
+    
+    <div>
+        <div *ngIf="patient && selectedMenu === 'patient' ">
+            <h2>{{ patient.firstName + " " + patient.lastName }}</h2>
+
+            <p><strong>Care Pathway ID:</strong> {{ patient.carePathwayId }}</p>
+            <p><strong>Device ID:</strong> {{ patient.deviceId ?? "Aucun"}}</p>
+            <p><strong>	Anesthesia Date:</strong> {{ patient.anesthesiaDate | date }}</p>
+            <p><strong>Surgery Date:</strong> {{ patient.surgeryDate | date }}</p>
+
+            <button *ngIf="!patient.deviceId" (click)="associerMontre()">Associer une montre</button>
+            <button *ngIf="patient.deviceId" (click)="dissocierMontre()">Dissocier la montre</button>
+        </div>
+    </div>
+
+    <div *ngIf="selectedMenu === 'vfc'">
+        <!-- Top tabs pour menu2 -->
+        <div class="top-tabs">
+            <a (click)="selectedSubTab = 'data'" [class.active]="selectedSubTab === 'data'">Données</a>
+            <a (click)="selectedSubTab = 'indicateur'" [class.active]="selectedSubTab === 'indicateur'">Indicateur</a>
+        </div>
+
+        <div *ngIf="selectedSubTab === 'data'">
+            <!-- Contenu du Sous-Onglet 1 -->
+            <app-tableau-vfc></app-tableau-vfc>
+        </div>
+
+        <div *ngIf="selectedSubTab === 'indicateur'">
+            <!-- Contenu du Sous-Onglet 2 -->
+            <p>Contenu du Sous-Onglet 2 ici</p>
+        </div>
+    </div>
+</div>
