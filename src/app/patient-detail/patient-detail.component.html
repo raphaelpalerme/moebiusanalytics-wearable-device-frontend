@@ -3,7 +3,7 @@
     <div class="sidebar">
         <ul>
             <li><a [class.selected-menu]="selectedMenu === 'patient'" (click)="selectedMenu = 'patient'">Patient</a></li>
-            <li><a [class.selected-menu]="selectedMenu === 'vfc'" (click)="selectedMenu = 'vfc'">VFC</a></li>
+            <li><a [class.selected-menu]="selectedMenu === 'vfc'" (click)="selectedMenu = 'vfc'">Fréquence cardiaque</a></li>
         </ul>
     </div>
     
@@ -35,7 +35,7 @@
 
         <div *ngIf="selectedSubTab === 'indicateur'">
             <!-- Contenu du Sous-Onglet 2 -->
-            <p>Contenu du Sous-Onglet 2 ici</p>
+            <app-heart-rate-average></app-heart-rate-average>
         </div>
     </div>
 </div>

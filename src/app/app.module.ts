@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { HeartRateAverageComponent } from './heart-rate-average/heart-rate-average.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     TableComponent,
     PatientDetailComponent,
     TableauVfcComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    HeartRateAverageComponent
   ],
   imports: [
     BrowserModule,

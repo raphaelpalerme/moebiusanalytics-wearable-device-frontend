@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Patient } from '../models/patient.model';
 import { CarePathwayService } from '../service/care-pathway.service';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogContentComponent } from '../dialog-content/dialog-content.component'; // Ajustez le chemin
+import { DialogContentComponent } from '../dialog-content/dialog-content.component';
+import { SharedDataService } from "../shared-data.service"
 
 @Component({
   selector: 'app-patient-detail',
@@ -16,7 +17,11 @@ export class PatientDetailComponent implements OnInit {
   selectedSubTab: string = 'data';
   patient: Patient | undefined; 
   
-  constructor(private route: ActivatedRoute, private carePathwayService: CarePathwayService, public dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, 
+    private carePathwayService: CarePathwayService, 
+    public dialog: MatDialog,
+    private sharedDataService: SharedDataService
+    ) { }
 
   ngOnInit(): void {
     this.patientId = this.route.snapshot.paramMap.get('id');
@@ -26,6 +31,7 @@ export class PatientDetailComponent implements OnInit {
         next:  (patientData) => {
           console.log(patientData);
           this.patient = patientData;
+          this.sharedDataService.setPatient(patientData);
         },
         error :  (error) => {
           console.error('Error fetching patient details:', error)

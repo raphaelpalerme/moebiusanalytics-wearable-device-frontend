@@ -4,11 +4,11 @@ import { Patient } from '../models/patient.model';
 import { SharedDataService } from "../shared-data.service"
 
 @Component({
-  selector: 'app-tableau-vfc',
-  templateUrl: './tableau-vfc.component.html',
-  styleUrls: ['./tableau-vfc.component.css']
+  selector: 'app-heart-rate-average',
+  templateUrl: './heart-rate-average.component.html',
+  styleUrls: ['./heart-rate-average.component.css']
 })
-export class TableauVfcComponent implements OnInit {
+export class HeartRateAverageComponent implements OnInit {
   rows: any[] = [];
   patient: Patient | undefined;
 

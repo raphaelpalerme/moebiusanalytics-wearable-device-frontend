@@ -1,13 +1,13 @@
 <table>
     <thead>
       <tr>
-        <th>Fréquence Cardiaque</th>
+        <th>Moyenne de la fréquence Cardiaque</th>
         <th>Date</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let row of rows">
-        <td>{{ row.heartRate }}</td>
+        <td>{{ row.averageHeartRate }}</td>
         <td>{{ row.measurementDate }}</td>
       </tr>
     </tbody>

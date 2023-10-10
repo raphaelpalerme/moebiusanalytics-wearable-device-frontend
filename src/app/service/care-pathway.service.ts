@@ -7,7 +7,7 @@ import { Patient } from '../models/patient.model';
   providedIn: 'root'
 })
 export class CarePathwayService {
-  private baseUrl = 'http://localhost:3002';
+  private baseUrl = 'https://moebiusanalyticswearable.azurewebsites.net';
   constructor(private http: HttpClient) { }
 
   getCarePathwayData(): Observable<any> {
@@ -33,4 +33,9 @@ export class CarePathwayService {
     };
     return this.http.put(this.baseUrl + '/api/carepathway/resetDevice', body)
   }
+
+  getHeartRateData(deviceId: string): Observable<any> {
+    return this.http.get(this.baseUrl + `/api/heartRate/data/${deviceId}`)
+  }
+
 }
