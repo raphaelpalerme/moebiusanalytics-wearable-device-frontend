@@ -50,9 +50,6 @@ export class PatientDetailComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Dialog closed with:', result);
-      if (result && result.success) { // Vérifiez si le dialogue a été fermé avec succès
-        window.location.reload();
-      }
     });
   }
 
@@ -62,7 +59,6 @@ export class PatientDetailComponent implements OnInit {
       this.carePathwayService.resetDevice(this.patient.carePathwayId).subscribe({
         next:  (response) => {
           console.log(response);
-          window.location.reload();
         },
         error :  (error) => {
           console.error('Error: ', error)
